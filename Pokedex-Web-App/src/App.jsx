@@ -1,6 +1,9 @@
 import {Routes, Route, Link} from 'react-router-dom';
 import './index.css'
 import Home from './pages/Home';
+import Edit from './pages/Edit';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -10,10 +13,11 @@ function App() {
           <Link to="/" className="text-white text-4xl font-bold">Pokedex</Link>
         </div>
       </nav>
-
       <Routes>
         <Route index element={<Home />} />
+        <Route path="/pokemon/edit/:id" element={<Edit />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

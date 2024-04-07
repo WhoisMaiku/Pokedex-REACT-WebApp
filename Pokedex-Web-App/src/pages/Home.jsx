@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import Pokemon from '../containers/Pokemon';
+import { toast } from 'react-toastify';
 
 function Home() {
 
@@ -10,11 +11,11 @@ function Home() {
     const getPokemon = async () => {
         try {
             setIsLoading(true);
-            const response = await axios.get('http://192.168.0.75:3000/pokemon');
+            const response = await axios.get('http://192.168.0.75:8080/pokemon');
             setPokemon(response.data);
             setIsLoading(false);
         } catch (error) {
-            console.error('Error fetching pokemon', error);
+            toast.error(error.message);
         }
     }
 
