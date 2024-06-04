@@ -11,7 +11,7 @@ function Home() {
     const getPokemon = async () => {
         try {
             setIsLoading(true);
-            const response = await axios.get('http://192.168.0.75:8080/pokemon');
+            const response = await axios.get('http://192.168.0.93:8080/pokemon');
             setPokemon(response.data);
             setIsLoading(false);
         } catch (error) {

@@ -18,7 +18,7 @@ function Edit() {
         const getSinglePokemon = async () => {
             try {
                 setIsLoading(true);
-                const response = await axios.get(`http://192.168.0.75:8080/pokemon/${id}`);
+                const response = await axios.get(`http://192.168.0.93:8080/pokemon/${id}`);
                 setPokemon({
                     id: response.data.id,
                     number: response.data.number,
@@ -39,7 +39,7 @@ function Edit() {
         setIsLoading(true);
         console.log(pokemon);
         try {
-            await axios.patch(`http://192.168.0.75:8080/pokemon/${id}`, pokemon);
+            await axios.patch(`http://192.168.0.93:8080/pokemon/${id}`, pokemon);
             setIsLoading(false);
             toast.success('Pokemon Updated Successfully');
             navigate('/');
