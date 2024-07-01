@@ -1,7 +1,34 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+import { ipAddress } from '../App';
+import Swal from 'sweetalert2';
 
-function Pokemon({ pokemon, isLoading }) {
+
+function Pokemon({ pokemon, isLoading, getPokemon }) {
+
+    const deletePokemon = async (id) => {
+        const result = await Swal.fire({
+            title: "Are you sure you want to delete this pokemon?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!"
+        });
+        if (result.isConfirmed){
+            try{
+                await axios.delete(`http://${ipAddress}:8080/pokemon/${id}`);
+                toast.success('Pokemon Deleted Successfully');
+            } catch (error) {
+                toast.error(error.message);
+            }
+            getPokemon();
+        }
+    };
+
     return (
         <div className="container mx-auto p-4">
             <div>
@@ -17,7 +44,7 @@ function Pokemon({ pokemon, isLoading }) {
                         <p className="text-center">Number: #{poke.number}</p>
                         <div className='mt-2 flex gap-4'>
                             <Link to={`/pokemon/edit/${poke.id}`} className="inline-block w-full text-center shadow-md text-sm bg-gray-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-gray-600 hover:cursor-pointer">Edit</Link>
-                            <Link to={`/pokemon/delete/${poke.id}`} className="inline-block w-full text-center shadow-md text-sm bg-red-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-red-600 hover:cursor-pointer">Delete</Link>
+                            <button onClick={() => deletePokemon(poke.id)} className="inline-block w-full text-center shadow-md text-sm bg-red-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-red-600 hover:cursor-pointer">Delete</button>
                         </div>  
                     </div>
                 ))}
