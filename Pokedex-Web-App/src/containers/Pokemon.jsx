@@ -32,7 +32,7 @@ function Pokemon({ pokemon, isLoading, getPokemon }) {
     return (
         <div className="container mx-auto p-4">
             <div>
-                <Link to={`/pokemon/create/new`} className="inline-block mt-4 text-center shadow-md text-sm bg-blue-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-blue-600 hover:cursor-pointer">Add Pokemon</Link>
+                <Link to={`/pokemon/create/new`} className="inline-block mt-4 text-center shadow-md text-sm bg-blue-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-blue-600 hover:cursor-pointer">Add Pokémon</Link>
                 <div className="mt-2"></div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

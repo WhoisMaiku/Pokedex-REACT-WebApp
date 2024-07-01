@@ -32,7 +32,7 @@ function Create() {
 
     return (
         <div className="max-w-lg bg-white shadow-lg mx-auto p-7 rounded mt-6">
-            <h2 className="text-2xl font-bold text-center">Add Pokemon</h2>
+            <h2 className="text-2xl font-bold text-center">Add Pokémon</h2>
             <form onSubmit={addPokemon}>
             <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="number">ID</label>

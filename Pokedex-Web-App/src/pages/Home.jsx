@@ -26,7 +26,7 @@ function Home() {
 
     return (
         <div>
-            <h1 className="text-4xl font-bold text-center mt-8">Pokedex</h1>
+            <h1 className="text-4xl font-bold text-center mt-8">Pokédex</h1>
             <Pokemon pokemon={pokemon} isLoading={isLoading} getPokemon={getPokemon} />
         </div>
   );

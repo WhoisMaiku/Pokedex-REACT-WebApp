@@ -11,7 +11,7 @@ function App() {
     <div> 
       <nav className="bg-gray-800">
         <div className="container mx-auto p-2 flex justify-between items-center">
-          <Link to="/" className="text-white text-4xl font-bold">Pokedex</Link>
+          <Link to="/" className="text-white text-4xl font-bold">Pokédex</Link>
         </div>
       </nav>
       <Routes>

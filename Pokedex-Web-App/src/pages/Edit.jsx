@@ -52,7 +52,7 @@ function Edit() {
 
     return (
         <div className="max-w-lg bg-white shadow-lg mx-auto p-7 rounded mt-6">
-            <h2 className="text-2xl font-bold text-center">Edit Pokemon</h2>
+            <h2 className="text-2xl font-bold text-center">Edit Pokémon</h2>
             <img src={pokemon.sprite} alt={pokemon.name} className="mx-auto" />
             <form onSubmit={updatePokemon}>
                 <div className="mb-4">
